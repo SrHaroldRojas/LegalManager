@@ -58,24 +58,24 @@ public class LoginViewController implements Initializable {
     private void eventAction(ActionEvent event) throws IOException{
         CConexion conexion = new CConexion();
         Object evt = event.getSource();
-
         if(evt.equals(btnLogin)){
-                                
-            if(!txtUser.getText().isEmpty() && !txtPassword.getText().isEmpty()){
-                              
-                if (conexion.verificarUsuario(txtUser.getText(), txtPassword.getText())) {
-                    
-                 System.out.println("Los datos son correctos");
-                 lblAlert.setText("Los datos ingresados son correctos...");
-                 openViewPrincipal();
-                 
-                } 
-                else {
-                lblAlert.setText("Los datos ingresados son incorrectos...");
-                System.out.println("Los datos ingresados son incorrectos!");
-                
+              
+                if(!txtUser.getText().isEmpty() && !txtPassword.getText().isEmpty()){
+                    if (conexion.verificarUsuario(txtUser.getText(), txtPassword.getText())) {
+                     System.out.println("Los datos son correctos");
+                     lblAlert.setText("Los datos ingresados son correctos...");
+                     openViewPrincipal();
+
+                    } 
+                    else {
+                    lblAlert.setText("Los datos ingresados son incorrectos...");
+                    System.out.println("Los datos ingresados son incorrectos!");
+
+                    }
+                }else{
+                    lblAlert.setText("Por favor rellene todos los campos...");
                 }
-            }
+            
         }
     }
     

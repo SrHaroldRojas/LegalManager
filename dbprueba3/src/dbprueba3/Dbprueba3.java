@@ -24,10 +24,10 @@ public class Dbprueba3 extends Application{
 
     public static void main(String[] args) {
         CConexion objetoConexion = new CConexion();
-        objetoConexion.estableceConexion();
+        //objetoConexion.estableceConexion();
         objetoConexion.mostrarDatos();
         launch();
-        objetoConexion.cierraConexion();   
+        //objetoConexion.cierraConexion();   
         
     }
 

@@ -19,7 +19,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
-public class RegisterViewController extends Usuario implements Initializable{
+public class RegisterViewController implements Initializable{
        
     @FXML
     private TextField txtName;
@@ -43,39 +43,38 @@ public class RegisterViewController extends Usuario implements Initializable{
     private Button btnRegister;  
     
     @FXML Label lblAlert;
-
-    public RegisterViewController(String name, String lastname, String email, String phone, String user, String password) {
-        super(name, lastname, email, phone, user, password);
-    }
-    
-    
-    
+  
    @FXML
 private void eventKey(KeyEvent event){
     Object evt = event.getSource();
 
     if(evt.equals(txtName) || evt.equals(txtLastname)){
         if(!event.getCharacter().matches("[a-zA-Z ]")){
+            lblAlert.setText("ingrese solo letras");
             System.out.println("Solo caracteres");
             event.consume();
         }
     } else if(evt.equals(txtUser)){
         if(event.getCharacter().equals(" ")){
+            lblAlert.setText("no deje espacios en blanco");
             System.out.println("no ingrese espacios");
             event.consume();
         }
     } else if(evt.equals(txtEmail)){
         if(event.getCharacter().equals(" ")){
+            lblAlert.setText("no deje espacios en blanco");
             System.out.println("no ingrese espacios");
             event.consume();
         }
     } else if(evt.equals(txtPhone)){
         if(!event.getCharacter().matches("\\d")){
+            lblAlert.setText("Ingrese unicamente numeros");
             System.out.println("ingrese numeros");
             event.consume();
         }
     } else if(evt.equals(txtPass)){
         if(txtPass.getText().length() >= 8){
+            lblAlert.setText("solo hasto 8 caracteres");
             System.out.println("solo hasta 8 digitos");
             event.consume();
         }
@@ -90,7 +89,7 @@ private void eventKey(KeyEvent event){
             
             if (txtName.getText().isEmpty() || txtLastname.getText().isEmpty() || txtEmail.getText().isEmpty() || 
             txtPhone.getText().isEmpty() || txtUser.getText().isEmpty() || txtPass.getText().isEmpty()) {
-            lblAlert.setText("Por favor llene todos los campos.");
+            lblAlert.setText("Por favor llene todos los campos...");
             return;
             }
 
