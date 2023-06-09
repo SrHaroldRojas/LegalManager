@@ -49,9 +49,6 @@ public class LawyerViewController implements Initializable{
     @FXML
     private TableColumn<?, ?> phoneColumn;
 
-    /*@FXML
-    private TableView<?> table;*/
-
     @FXML
     private TextField txtAdress;
 

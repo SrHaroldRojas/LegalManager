@@ -1,10 +1,6 @@
 
 package controller;
 
-import com.mysql.cj.conf.IntegerProperty;
-import com.mysql.cj.conf.StringProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-
 public class Lawyer {
     int id;
     String name;

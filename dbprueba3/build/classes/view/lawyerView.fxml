@@ -63,6 +63,6 @@
       <Button fx:id="btnAdd" layoutX="22.0" layoutY="309.0" mnemonicParsing="false" onAction="#Add" style="-fx-background-color: #030061;" text="Agregar" textFill="WHITE" />
       <Button fx:id="btnUpdate" layoutX="104.0" layoutY="309.0" mnemonicParsing="false" onAction="#Update" style="-fx-background-color: #030061;" text="Actualizar" textFill="WHITE" />
       <Button fx:id="btnDelete" layoutX="195.0" layoutY="309.0" mnemonicParsing="false" onAction="#Delete" style="-fx-background-color: #030061;" text="Eliminar" textFill="WHITE" />
-      <Label fx:id="lblAlert" layoutX="124.0" layoutY="362.0" text="label" textAlignment="CENTER" />
+      <Label fx:id="lblAlert" layoutX="21.0" layoutY="362.0" text="label" textAlignment="CENTER" />
    </children>
 </AnchorPane>

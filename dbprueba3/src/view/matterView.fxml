@@ -1,14 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="503.0" prefWidth="674.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MatterViewController">
+<AnchorPane prefHeight="503.0" prefWidth="674.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MatterViewController">
    <children>
-      <Label layoutX="281.0" layoutY="225.0" text="Asunto">
+      <Label layoutX="184.0" layoutY="14.0" text="Gestionar Asuntos" textFill="#030061">
          <font>
-            <Font size="36.0" />
-         </font></Label>
+            <Font name="Yu Gothic Medium" size="36.0" />
+         </font>
+      </Label>
+      <VBox layoutX="25.0" layoutY="84.0" prefHeight="218.0" prefWidth="203.0" style="-fx-background-color: #030061;">
+         <children>
+            <Label text="Nombre del asunto" textFill="WHITE" />
+            <TextField fx:id="txtName" />
+            <Label layoutX="10.0" layoutY="10.0" text="Fecha inicio" textFill="WHITE" />
+            <DatePicker fx:id="startDate" prefHeight="25.0" prefWidth="223.0" />
+            <Label text="Fecha Finalizacion" textFill="WHITE" />
+            <DatePicker fx:id="endDate" layoutX="10.0" layoutY="69.0" prefHeight="25.0" prefWidth="220.0" />
+            <Label text="Estado" textFill="WHITE" />
+            <ComboBox fx:id="statusBox" prefHeight="25.0" prefWidth="204.0" />
+            <Label text="Propietario del caso" textFill="WHITE" />
+            <ComboBox fx:id="clientBox" prefHeight="25.0" prefWidth="206.0" />
+            <Label text="Abogado asignado" textFill="WHITE" />
+            <ComboBox fx:id="lawyerBox" prefHeight="25.0" prefWidth="210.0" />
+         </children>
+      </VBox>
+      <Button fx:id="btnAdd" layoutX="25.0" layoutY="363.0" mnemonicParsing="false" onAction="#add" style="-fx-background-color: #030061;" text="Agregar" textFill="WHITE" />
+      <Button fx:id="btnUpdate" layoutX="93.0" layoutY="363.0" mnemonicParsing="false" onAction="#Update" style="-fx-background-color: #030061;" text="Modificar" textFill="WHITE" />
+      <Button fx:id="btnDelete" layoutX="170.0" layoutY="363.0" mnemonicParsing="false" onAction="#Delete" style="-fx-background-color: #030061;" text="Eliminar" textFill="WHITE" />
+      <TableView fx:id="table" layoutX="237.0" layoutY="84.0">
+        <columns>
+            <TableColumn fx:id="idColumn" prefWidth="32.0" text="ID" />
+          <TableColumn fx:id="nameColumn" prefWidth="62.0" text="Asunto" />
+          <TableColumn fx:id="startDateColumn" prefWidth="76.0" text="Fecha Inicio" />
+            <TableColumn fx:id="endDateColumn" prefWidth="64.0" text="Fecha Fin " />
+            <TableColumn fx:id="statusColumn" prefWidth="64.0" text="Estado" />
+            <TableColumn fx:id="clientNameColumn" prefWidth="64.0" text="Cliente" />
+            <TableColumn fx:id="lawyerNameColumn" prefWidth="78.0" text="Abogado" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>
